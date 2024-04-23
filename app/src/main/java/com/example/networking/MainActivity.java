@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
     private final String JSON_FILE = "mountains.json";
-
     private ArrayList<Mountain> mountainList = new ArrayList<>();
     private RecyclerViewAdapter adapter;
     private Gson gson = new Gson();
@@ -51,5 +50,4 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         adapter.setMountainList(mountainList);
         adapter.notifyDataSetChanged();
     }
-
 }
