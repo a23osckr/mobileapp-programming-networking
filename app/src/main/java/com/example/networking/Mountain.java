@@ -20,7 +20,7 @@ public class Mountain {
 
     public String info(){
         String tmp = new String();
-        tmp+=name+" is located in mountain range "+location+" and reaches "+size+"m above sea level";
+        tmp+=name+" is located in "+location+" and reaches "+size+"m above sea level";
         return tmp;
     }
 
