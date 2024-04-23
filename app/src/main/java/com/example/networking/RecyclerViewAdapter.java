@@ -18,7 +18,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     RecyclerViewAdapter(Context context, ArrayList<Mountain> items, OnClickListener onClickListener) {
         this.layoutInflater = LayoutInflater.from(context);
-        this.mountainArrayList = mountainArrayList;
+        this.mountainArrayList = items;
         this.onClickListener = onClickListener;
     }
 
@@ -56,4 +56,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public interface OnClickListener {
         void onClick(Mountain mountain);
     }
+
+    public void setMountainList(ArrayList<Mountain> mountainList) {
+        this.mountainArrayList = mountainList;
+    }
+
+
 }
