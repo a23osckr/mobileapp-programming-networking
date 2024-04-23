@@ -29,7 +29,19 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new JsonFile(this, this).execute(JSON_FILE);
+        adapter = new RecyclerViewAdapter(this, mountainList, new RecyclerViewAdapter.OnClickListener() {
+            @Override
+            public void onClick(Mountain mountain) {
+                Toast.makeText(MainActivity.this, mountain.info(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        RecyclerView view = findViewById(R.id.recycler_view);
+        view.setLayoutManager(new LinearLayoutManager(this));
+        view.setAdapter(adapter);
+
+        //new JsonFile(this, this).execute(JSON_FILE);
+        new JsonTask(this).execute(JSON_URL);
     }
 
     @Override
